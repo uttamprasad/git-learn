@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{background:#3aa6a7;}
+		.container{width: 420px;margin: 0 auto;overflow: hidden;text-align: center}
+		.container h1{margin:10px 0 0 0;}
+		.section{width: 100%;;}
+		button{padding: 5px 30px 5px 30px;margin-top:10px;background:#ea5d59;border:0;border-radius:4px;color:#fff;font-size: 15px;}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>Ludo Game</h1>
+	<div class="section">
+	<img src="images/dice1.png" alt="" id="check1">
+	<img src="images/dice2.png" alt="" id="check2">
+
+	</div>
+	
+	<button onclick="ludogame()">Turn</button>
+</div>
+</body>
+<script type="text/javascript">
+	 ludogame=()=>{ 
+		const play1=Math.floor(Math.random()*6)+1;
+		const ludoImg=`images/dice${play1}.png`;
+		document.querySelector('#check1').setAttribute('src', ludoImg);
+
+		const play2=Math.floor(Math.random()*6)+1;
+		const ludoImg1=`images/dice${play2}.png`;
+		document.querySelector('#check2').setAttribute('src', ludoImg1);
+
+		if(play1>play2){
+			document.querySelector('h1').innerHTML='Play 1 winner';
+		}
+		else if(play1<play2){
+			document.querySelector('h1').innerHTML='Play 2 winner';
+		}
+		else{
+			document.querySelector('h1').innerHTML='Try Again';
+		
+		}
+	}
+
+</script>
+</html>
